@@ -53,20 +53,6 @@ pnpm dev  # or npm run dev / yarn dev
 # Visit in browser
 http://localhost:3000
 
-📁 Folder Structure
-
-app/
-  layout.tsx        # Root layout
-  page.tsx          # Landing page
-  globals.css       # Global styles
-components/
-  ui/               # Reusable UI components
-  theme-provider.tsx
-public/             # Static assets
-tailwind.config.js  # Tailwind CSS configuration
-tsconfig.json       # TypeScript configuration
-package.json        # Project metadata & scripts
-
 ## 🤖 AI Usage Report  
 
 This project was developed with extensive assistance from AI tools to speed up production and enhance quality:  
@@ -80,5 +66,5 @@ This project was developed with extensive assistance from AI tools to speed up p
 📜 License
 This project is licensed under the MIT License — feel free to use and modify for your own portfolio.
 
-Author:Vishwa Panchal
+Author: Vishwa Panchal
 GitHub Repo: https://github.com/DoodleDazzle/admybrand.git
