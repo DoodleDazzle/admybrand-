@@ -1180,9 +1180,9 @@ export default function ADmyBrandLandingPage() {
                     <div>
                       <h4 className="font-semibold text-slate-900 dark:text-white mb-1">Visit our office</h4>
                       <p className="text-slate-600 dark:text-slate-300">
-                        123 AI Street, Tech District
+                      The Great Eastern Centre, ADmyBRAND - North India Cluster AWFIS 70, Behind IFCI Tower
                         <br />
-                        San Francisco, CA 94105
+                        GESCO, Nehru Place, Delhi 110019
                       </p>
                     </div>
                   </div>
@@ -1307,7 +1307,7 @@ export default function ADmyBrandLandingPage() {
               <ul className="space-y-2 text-sm">
                 <li className="flex items-center gap-2">
                   <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-                  <span>123 AI Street, Mumbai, India</span>
+                  <span>GESCO, Nehru Place, Delhi 110019</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path fill="currentColor" d="M21 6.5a2.5 2.5 0 0 0-2.5-2.5h-13A2.5 2.5 0 0 0 3 6.5v11A2.5 2.5 0 0 0 5.5 20h13a2.5 2.5 0 0 0 2.5-2.5v-11zm-1.5 0v.01L12 13 4.5 6.51V6.5h15zm-15 11v-8.49l7.88 6.99c.36.32.88.32 1.24 0L20.5 9.01V17.5a1 1 0 0 1-1 1h-13a1 1 0 0 1-1-1z"/></svg>
