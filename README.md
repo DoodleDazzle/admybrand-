@@ -39,7 +39,7 @@ View on Vercel: https://admybrand-lilac.vercel.app/
 
 
 # Clone repository
-git clone https://github.com/YOUR-USERNAME/admybrand-ai-suite.git
+git clone https://github.com/DoodleDazzle/admybrand.git
 
 # Navigate into project
 cd admybrand-ai-suite
