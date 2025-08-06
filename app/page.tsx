@@ -1,5 +1,6 @@
 "use client";
 import HeroSection from "../components/HeroSection";
+import DraggableNavbar from "../components/DraggableNavbar";
 
 import { useState, useEffect, useRef, useMemo, useLayoutEffect } from "react"
 import Link from "next/link"
@@ -403,149 +404,12 @@ export default function ADmyBrandLandingPage() {
         padding: 0,
       }}
     >
-      {/* Header - Centered, Minimalist, Compact */}
-      <header className="sticky top-0 z-50 w-full bg-white/90 dark:bg-black/90 backdrop-bl-xl">
-        <div className="container mx-auto px-2 md:px-4">
-          <div className="flex items-center w-full h-14 md:h-16 gap-2 md:gap-1">
-            {/* Brand (far left) */}
-            <div className="flex items-center gap-1 min-w-0 max-w-[60vw] sm:max-w-none flex-shrink flex-grow-0">
-              <div className="w-7 h-7 rounded-full bg-black dark:bg-white flex items-center justify-center text-white dark:text-black font-bold text-xs md:text-sm shrink-0" style={{fontFamily:'inherit'}}>A</div>
-              <span className="ml-1 text-black dark:text-white font-bold text-base md:text-lg tracking-tight whitespace-nowrap truncate" style={{fontFamily:'inherit'}}>ADmyBRAND</span>
-            </div>
-
-            {/* Centered Nav (center, absolute center with flex-1) */}
-            <div className="flex-1 flex justify-center">
-              <nav className="hidden md:flex gap-3 md:gap-6 ml-8 md:ml-12">
-                <Link href="#features" className="text-xs font-medium text-black dark:text-gray-200 px-2 md:px-3 py-1.5 rounded-full transition-all duration-150 hover:bg-black/10 dark:hover:bg-white/10">Features</Link>
-                <Link href="#pricing" className="text-xs font-medium text-black dark:text-gray-200 px-2 md:px-3 py-1.5 rounded-full transition-all duration-150 hover:bg-black/10 dark:hover:bg-white/10">Pricing</Link>
-                <Link href="#calculator" className="text-xs font-medium text-black dark:text-gray-200 px-2 md:px-3 py-1.5 rounded-full transition-all duration-150 hover:bg-black/10 dark:hover:bg-white/10">Calculator</Link>
-                <Link href="#faq" className="text-xs font-medium text-black dark:text-gray-200 px-2 md:px-3 py-1.5 rounded-full transition-all duration-150 hover:bg-black/10 dark:hover:bg-white/10">FAQ</Link>
-              </nav>
-            </div>
-
-            {/* Desktop Right (far right) */}
-            <div className="hidden md:flex items-center gap-2 md:gap-3 min-w-[110px] justify-end flex-shrink-0">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={toggleTheme}
-                className="rounded-full text-gray-500 dark:text-gray-300 hover:text-black dark:hover:text-white hover:bg-black/10 dark:hover:bg-white/10 p-1 md:p-2"
-                aria-label="Toggle theme"
-              >
-                {mounted && theme === "dark" ? <Sun className="size-[18px]" /> : <Moon className="size-[18px]" />}
-              </Button>
-              <Link href="/signin" className="text-xs md:text-sm font-semibold text-black dark:text-gray-200 px-4 py-2 rounded-full transition-all duration-150 hover:bg-black/10 dark:hover:bg-white/10">Sign In</Link>
-              <Link href="/get-started">
-                <Button
-                  className="rounded-full bg-black dark:bg-white text-white dark:text-black text-xs md:text-sm font-semibold px-4 h-9 flex items-center hover:bg-gray-900 dark:hover:bg-gray-200 transition-colors shadow-none border-2 border-black dark:border-white"
-                  style={{minWidth:'64px'}}
-                >
-                  Get Started
-                  <ChevronRight className="ml-1 size-4" />
-                </Button>
-              </Link>
-            </div>
-            {/* Mobile Nav: Hamburger, Theme, Actions */}
-            <div className="flex md:hidden items-center gap-1">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={toggleTheme}
-                className="rounded-full text-gray-500 dark:text-gray-300 p-1 min-w-0 w-8 h-8 flex-shrink-0"
-                aria-label="Toggle theme"
-              >
-                {mounted && theme === "dark" ? <Sun className="size-[18px]" /> : <Moon className="size-[18px]" />}
-              </Button>
-              <Link href="/signin" className="text-xs font-semibold text-black dark:text-gray-200 px-2 py-2 rounded-full transition-all duration-150 hover:bg-black/10 dark:hover:bg-white/10 min-w-0 whitespace-nowrap flex-shrink-0">Sign In</Link>
-              <Link href="/get-started" className="min-w-0 flex-shrink-0">
-                <Button
-                  className="rounded-full bg-black dark:bg-white text-white dark:text-black text-xs font-semibold px-3 h-8 flex items-center hover:bg-gray-900 dark:hover:bg-gray-200 transition-colors shadow-none border-0 min-w-0"
-                  style={{minWidth:'56px'}}>
-                  Get Started
-                  <ChevronRight className="ml-1 size-4" />
-                </Button>
-              </Link>
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="text-gray-500 dark:text-gray-300 p-1 min-w-0 w-8 h-8 flex-shrink-0"
-                aria-label="Open menu"
-              >
-                {mobileMenuOpen ? <X className="size-5" /> : <Menu className="size-5" />}
-              </Button>
-            </div>
-          </div>
-        </div>
-
-        {/* Mobile menu */}
-        {mobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="md:hidden absolute top-16 inset-x-0 bg-white/95 dark:bg-black/95 backdrop-blur-xl border-b border-slate-200 dark:border-slate-700"
-          >
-            <div className="container py-4 flex flex-col gap-4">
-              <Link
-                href="#features"
-                className="py-2 text-sm font-medium text-gray-600 dark:text-gray-300"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Features
-              </Link>
-              <Link
-                href="#pricing"
-                className="py-2 text-sm font-medium text-gray-600 dark:text-gray-300"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Pricing
-              </Link>
-              <Link
-                href="#testimonials"
-                className="py-2 text-sm font-medium text-gray-600 dark:text-gray-300"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Testimonials
-              </Link>
-              <Link
-                href="#faq"
-                className="py-2 text-sm font-medium text-gray-600 dark:text-gray-300"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                FAQ
-              </Link>
-              <div className="flex flex-col gap-2 pt-2 border-t border-slate-200 dark:border-slate-700">
-                <Link
-                  href="#"
-                  className="py-2 text-base font-semibold flex items-center gap-2 text-gray-500 dark:text-gray-400"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {/* Theme toggle icon for mobile menu */}
-                  <span className="inline-flex items-center justify-center rounded-full border-2 border-gray-400 dark:border-white size-8">
-                    {mounted && theme === "dark" ? (
-                      <Sun className="size-5 text-white" />
-                    ) : (
-                      <Moon className="size-5 text-black" />
-                    )}
-                  </span>
-                  Log in
-                </Link>
-                <Button
-                  className="rounded-full h-12 px-8 text-base font-bold transition-colors
-                    bg-[#2563eb] text-white
-                    dark:bg-white dark:text-black
-                    hover:bg-[#1d4ed8] dark:hover:bg-gray-500
-                    shadow-xl border-0"
-                >
-                  Get Started
-                  <ChevronRight className="ml-1 size-4" />
-                </Button>
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </header>
+      {/* Draggable Glassmorphic Navbar */}
+      <DraggableNavbar 
+        mounted={mounted}
+        theme={theme}
+        toggleTheme={toggleTheme}
+      />
 
       <main className="flex-1">
         {/* Hero Section */}
@@ -1008,7 +872,7 @@ export default function ADmyBrandLandingPage() {
               </Badge>
               <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-slate-900 dark:text-white">
                 <span className="bg-gradient-to-r from-black to-gray-600 dark:from-white dark:to-gray-400 bg-clip-text text-transparent">
-                  Insights & Resources for Modern Marketers
+                Insights & Resources for Modern Marketers
                 </span>
               </h2>
               <p className="max-w-3xl text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
